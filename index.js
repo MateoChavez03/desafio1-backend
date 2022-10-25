@@ -1,5 +1,5 @@
 class User {
-    constructor(firstName, surname, books, pets) {
+    constructor(firstName, surname, books = [], pets = []) {
         this.firstName = firstName;
         this.surname = surname;
         this.books = books;
