@@ -1,0 +1,20 @@
+[
+  {
+    "title": "GTA V",
+    "price": 60,
+    "thumbnail": "urlImg1",
+    "id": 1
+  },
+  {
+    "title": "Horizon Forbidden West",
+    "price": 80,
+    "thumbnail": "urlImg2",
+    "id": 2
+  },
+  {
+    "title": "Halo Infinite",
+    "price": 80,
+    "thumbnail": "urlImg3",
+    "id": 3
+  }
+]
