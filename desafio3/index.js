@@ -9,9 +9,9 @@ const product1 = new Product("GTA V", 60, "urlImg1");
 const product2 = new Product("Horizon Forbidden West", 80, "urlImg2");
 const product3 = new Product("Halo Infinite", 80, "urlImg3");
 
-await container.save(product1);
-await container.save(product2);
-await container.save(product3);
+container.save(product1);
+container.save(product2);
+container.save(product3);
 
 
 const server = http.listen(8080, () => {
