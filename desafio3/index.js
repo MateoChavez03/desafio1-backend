@@ -1,41 +1,38 @@
-import express from "express";
-import { Container, Product } from "./container.js";
-
+const express = require("express")
 const http = express();
 
-const container = new Container('./products.json')
+const Container = require("./container.js")
 
-const product1 = new Product("GTA V", 60, "urlImg1");
-const product2 = new Product("Horizon Forbidden West", 80, "urlImg2");
-const product3 = new Product("Halo Infinite", 80, "urlImg3");
+const container = new Container("./products.json");
 
-container.save(product1);
-container.save(product2);
-container.save(product3);
+const PORT = process.env.PORT || 8080;
 
-
-const server = http.listen(8080, () => {
-    console.log(`Servidor HTTP escuchando en el puerto ${server.address().port}`);
+const server = http.listen(PORT, () => {
+  console.log(`Servidor HTTP escuchando en el puerto ${PORT}`);
 });
 
-server.on("error", error => console.log(`Error en el servidor ${error}`));
+server.on("error", (error) => console.log(`Error en el servidor ${error}`));
 
 http.get("/products", async (req, res) => {
-    res.send(await container.getAll());
-})
+  res.send(await container.getAll());
+});
 
 http.get("/productRandom", async (req, res) => {
-    res.send(await container.getRandom());
-})
+  res.send(await container.getRandom());
+});
 
 http.get("*", (req, res) => {
-    res.send(`
+  res.send(`
     <main style="text-align: center">
         <h1>Welcome to my server, the url you are trying to access has no content</h1>
         <p>Try to access to </p>
-        <a href="/products"> http:/localhost:${server.address().port}/products </a>
+        <a href="/products"> http:/localhost:${
+          PORT
+        }/products </a>
         <p> or </p>
-        <a href="/productRandom"> http:/localhost:${server.address().port}/productRandom </a>
+        <a href="/productRandom"> http:/localhost:${
+          PORT
+        }/productRandom </a>
     </main>
     `);
-})
+});
