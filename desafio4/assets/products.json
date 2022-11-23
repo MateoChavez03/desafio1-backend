@@ -6,10 +6,10 @@
     "src": "urlImg2"
   },
   {
-    "id": 3,
-    "name": "Halo Infinite",
-    "price": 80,
-    "src": "urlImg3"
+    "name": "Hollow Knight",
+    "price": 70,
+    "src": "urlImg8",
+    "id": 3
   },
   {
     "id": 4,

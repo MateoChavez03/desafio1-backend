@@ -15,11 +15,11 @@ class Container{
         }
     }
 
-    async update(product){
+    async update(product, id){
         const products = await this.getAll();
-        const i = products.map(element => element.id).indexOf(product.id);
+        let oldProduct = products.find(element => element.id == id);
+        const i = products.indexOf(oldProduct);
         if(i >= 0){
-            const oldProduct = products[i];
             product.id = products[i].id;
             products[i] = product;
             try {

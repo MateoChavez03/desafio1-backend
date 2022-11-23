@@ -49,12 +49,12 @@ productsRouter.delete('/:id', async (req, res) => {
 })
 
 productsRouter.put('/:id', async (req, res) => {
-    const result = await products.update(req.body);
+    const result = await products.update(req.body, req.params.id);
     if(result.length > 0){
         res.send(`
-        El producto : ${JSON.stringify(result[1])}\n\n
-         reemplazado por : ${JSON.stringify(result[0])}
-         en la posición : ${result[0].id}
+        El producto : ${JSON.stringify(result[1])}\n
+        fue reemplazado por : ${JSON.stringify(result[0])}
+        en la posición : ${result[0].id}
         `);
     }
     else{
