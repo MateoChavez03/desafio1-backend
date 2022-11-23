@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "name": "Horizon Forbidden West",
+    "price": 80,
+    "src": "urlImg2"
+  },
+  {
+    "id": 3,
+    "name": "Halo Infinite",
+    "price": 80,
+    "src": "urlImg3"
+  },
+  {
+    "id": 4,
+    "name": "God of War: Ragnarok",
+    "price": 80,
+    "src": "urlImg4"
+  }
+]

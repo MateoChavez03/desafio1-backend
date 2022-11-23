@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ingreso de Productos</title>
+</head>
+<body>
+
+    <h2>Ingrese Producto</h2>
+    <form action="/api/products" method="POST">
+        <input type="number" name="id" value="1" required hidden >
+        Nombre: <input type="text" name="name" required>
+        Precio: <input type="number" name="price" required>
+        SRC : <input type="text" name="src" required>
+        <button>Enviar</button>
+    </form>
+
+</body>
+</html>
