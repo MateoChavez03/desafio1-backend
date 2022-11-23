@@ -7,13 +7,25 @@
 </head>
 <body>
 
-    <h2>Ingrese Producto</h2>
+    <h2 style="margin: 30px 30px; color: rebeccapurple;">Ingrese Producto</h2>
     <form action="/api/products" method="POST">
-        <input type="number" name="id" value="1" required hidden >
-        Nombre: <input type="text" name="name" required>
-        Precio: <input type="number" name="price" required>
-        SRC : <input type="text" name="src" required>
-        <button>Enviar</button>
+        <div style="margin: 30px 30px">
+            <label for="id"> ID</label>
+            <input style="display: block" type="number" name="id" required>
+        </div>
+        <div style="margin: 30px 30px">
+            <label for="name"> Nombre</label>
+            <input style="display: block" type="text" name="name" required>
+        </div>
+        <div style="margin: 30px 30px">
+            <label for="price"> Precio</label>
+            <input style="display: block" type="number" name="price" required>
+        </div>
+        <div style="margin: 30px 30px">
+            <label for="src"> SRC</label>
+            <input style="display: block" type="text" name="src" required>
+        </div>
+        <button style="margin: 0px 30px">Enviar</button>
     </form>
 
 </body>
