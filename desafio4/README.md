@@ -1,4 +1,4 @@
-# Desafios entregable: Servidor con Express - Programación Backend
+# Desafios entregable: API Restful - Programación Backend
 
 ## Scripts:
 
