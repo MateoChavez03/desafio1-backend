@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "name": "Horizon Forbidden West",
+    "price": 80,
+    "src": "img/horizon_banner.jpg"
+  },
+  {
+    "name": "Sea of Thieves",
+    "price": 70,
+    "src": "img/sea_banner.jpg",
+    "id": 3
+  },
+  {
+    "id": 4,
+    "name": "God of War: Ragnarok",
+    "price": 80,
+    "src": "img/gow_banner.jpg"
+  }
+]
