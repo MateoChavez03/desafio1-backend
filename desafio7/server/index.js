@@ -1,15 +1,16 @@
-const express = require('express');
-const {Server: HttpServer} = require('http');
-const {Server: IOServer} = require('socket.io');
-const Products = require('../assets/products/products');
-const Messages = require('../assets/messages/messages');
-const handlebars = require("express-handlebars");
+import express from "express";
+import { Server as HttpServer } from 'http';
+import { Server as IOServer } from 'socket.io';
+import { optionsMDB } from "../options/mariaDB.js";
+import { optionsSQLite } from "../options/SQLite.js"
+import Container from "../utils/container.js"
+import * as handlebars from 'express-handlebars';
 
 const app = express()
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
-const productsContainer = new Products('./assets/products/products.json');
-const messagesContainer = new Messages('./assets/messages/messages.json');
+const productsContainer = new Container(optionsMDB, "products");
+const messagesContainer = new Container(optionsSQLite, "messages");
 
 // Middlewares
 app.use(express.static('public'));
@@ -25,22 +26,21 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', './public/views');
 
-
 // Home 
 app.get('/', (req, res) => {
     res.render('index', {})
 });
 
 io.on('connection', async socket => {
-    socket.emit('update_products', await productsContainer.getAllProducts());
-    socket.emit('update_messages', await messagesContainer.getAllMessages());
+    socket.emit('update_products', await productsContainer.getAll());
+    socket.emit('update_messages', await messagesContainer.getAll());
     socket.on('new_product', async product => {
-        await productsContainer.saveProduct(product);
-        io.emit('update_products', await productsContainer.getAllProducts());
+        await productsContainer.save(product);
+        io.emit('update_products', await productsContainer.getAll());
     });
     socket.on('new_message', async message => {
-        await messagesContainer.saveMessage(message);
-        io.emit('update_messages', await messagesContainer.getAllMessages());
+        await messagesContainer.save(message);
+        io.emit('update_messages', await messagesContainer.getAll());
     });
 });
 

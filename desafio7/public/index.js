@@ -33,7 +33,11 @@ const newMessage = document.getElementById('messageForm');
 newMessage.addEventListener('submit', event => {
   event.preventDefault();
   let today = new Date();
-  let date = `${today.getFullYear()}/${(today.getMonth()+1)}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}`;
+  let minutes = today.getMinutes();
+  if (minutes < 10) {
+      minutes = `0${today.getMinutes()}`
+  }
+  let date = `${today.getFullYear()}-${(today.getMonth()+1)}-${today.getDate()} ${today.getHours()}:${minutes}`;
   let mail = document.getElementById('email').value;
   let msg = document.getElementById('msg').value;
   socket.emit('new_message', {
