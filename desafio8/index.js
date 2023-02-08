@@ -7,8 +7,9 @@ import { messagesDAO } from "./models/messages.js";
 const CRUD = async () => {
   try {
     // Conection "Ecommerce" data base:
-    await mongoose.connect("mongodb://127.0.0.1:27017/ecommerce", {
-      serverSelectionTimeoutMS: 5000
+    await mongoose.connect("mongodb://myUserAdmin:pacho_hermoso@127.0.0.1:27017/ecommerce", {
+      serverSelectionTimeoutMS: 5000,
+      authSource: "admin"
     });
     console.log("Data base conected succesfully");
 

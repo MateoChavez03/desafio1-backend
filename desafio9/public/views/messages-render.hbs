@@ -1,0 +1,12 @@
+{{#if messages.length}}
+    <h1 class="text-white my-5">MESSAGES LIST</h1>
+    <div class="border border-light py-3"> 
+        {{#each messages}}
+            <p class="msg text-light py-2">
+                <span class="date">{{this.timestamp}}</span> - 
+                <span class="email">{{this.author.id}}</span>: 
+                <span class="text-info">{{this.msg}}</span>
+            </p>
+        {{/each}}
+    </div>
+{{/if}}
