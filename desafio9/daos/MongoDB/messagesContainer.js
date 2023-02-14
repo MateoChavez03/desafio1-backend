@@ -50,10 +50,10 @@ export default class MessageContainer{
         return date
     }
 
-    async normalize(){
+/*     async normalize(){
         const messages = await this.getAll()
         messages.id = "messages"
         const normalizedData = normalize(messages, post)
         console.log(JSON.stringify(normalizedData, null, '\t'))
-    }
+    } */
 }

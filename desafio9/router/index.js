@@ -5,7 +5,6 @@ import { Server as HttpServer } from 'http';
 import { Server as IOServer } from 'socket.io';
 import * as handlebars from 'express-handlebars';
 import { productsFaker, messages } from '../daos/index.js'
-import { checkPrime } from "crypto";
 
 const app = express()
 const httpServer = new HttpServer(app);
@@ -54,7 +53,6 @@ const schemaMessages = new schema.Entity('messages', {
     author: authorSchema
 });
 const data = await messages.getAll();
-console.log(data);
 const modifiedData = {
     messages: data,
     id: "messages"
