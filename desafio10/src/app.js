@@ -9,11 +9,11 @@ import mongoose from 'mongoose';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-mongoose.connect("mongodb+srv://CoderUser:123@clustermateochavez38140.scwmyko.mongodb.net/eccommerce?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://CoderUser:123@clustermateochavez38140.scwmyko.mongodb.net/eccomerce?retryWrites=true&w=majority")
 
 app.use(session({
     store: MongoStore.create({
-        mongoUrl:"mongodb+srv://CoderUser:123@clustermateochavez38140.scwmyko.mongodb.net/eccommerce?retryWrites=true&w=majority",
+        mongoUrl:"mongodb+srv://CoderUser:123@clustermateochavez38140.scwmyko.mongodb.net/eccomerce?retryWrites=true&w=majority",
         ttl:20
     }),
     secret: 'aspdiasc903ok1pkc',
