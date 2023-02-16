@@ -22,7 +22,6 @@ app.use(session({
     cookie: {maxAge: 30000}
 }));
 
-//Inicializar el motor.
 app.engine('handlebars',handlebars.engine());
 app.set('views', `${__dirname}/views`);
 app.set('view engine','handlebars');
@@ -33,7 +32,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
-//Routers
 app.use('/',viewsRouter);
 app.use('/api/sessions',sessionsRouter);
 
